@@ -4,8 +4,10 @@ Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"bytes"
 	"fmt"
-	"os"
+
+	"github.com/hirabarufumitaka/ascii-art-cli/aa"
 
 	"github.com/spf13/cobra"
 )
@@ -21,14 +23,17 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("cat called")
-		// aa/cat.txt ファイルを読み込んで表示する
-		b, err := os.ReadFile("aa/cat.txt")
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		fmt.Println(string(b))
+		file, err := aa.Aa.Open("cat.txt")
+    if err != nil {
+      fmt.Println(err)
+    }
+    defer file.Close()
+
+    // ファイルを読み込んで出力
+    buf := new(bytes.Buffer)
+    buf.ReadFrom(file)
+
+    fmt.Print(buf.String())
 	},
 }
 
