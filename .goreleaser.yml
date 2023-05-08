@@ -21,7 +21,7 @@ release:
   prerelease: auto
 brews:
   - tap:
-      owner: michimani
+      owner: hirabarufumitaka
       name: homebrew-ascii-art-cli
     folder: Formula
     homepage: "https://github.com/hirabarufumitaka/ascii-art-cli"
