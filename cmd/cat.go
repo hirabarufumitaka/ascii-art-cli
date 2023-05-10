@@ -24,16 +24,16 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		file, err := aa.Aa.Open("cat.txt")
-    if err != nil {
-      fmt.Println(err)
-    }
-    defer file.Close()
+		if err != nil {
+			fmt.Println(err)
+		}
+		defer file.Close()
 
-    // ファイルを読み込んで出力
-    buf := new(bytes.Buffer)
-    buf.ReadFrom(file)
+		// ファイルを読み込んで出力
+		buf := new(bytes.Buffer)
+		buf.ReadFrom(file)
 
-    fmt.Print(buf.String())
+		fmt.Print(buf.String())
 	},
 }
 
