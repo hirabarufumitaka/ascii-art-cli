@@ -16,6 +16,7 @@ $ go get github.com/hirabarufumitaka/ascii-art-cli
 
 ```
 $ brew tap hirabarufumitaka/ascii-art-cli
+$ brew install ascii-art-cli
 or
 $ brew install hirabarufumitaka/ascii-art-cli/ascii-art-cli
 ```
